@@ -8,16 +8,30 @@
 
 </head>
 <body>
-
-    <div class="window">
-        <div class="images">
-            <img src="./images/1.jpg" alt="图片1" width="400px" height="300px">
-            <img src="./images/2.jpg" alt="图片2" width="400px" height="300px">
-            <img src="./images/3.jpg" alt="图片3" width="400px" height="300px">
-            <img src="./images/4.jpg" alt="图片4" width="400px" height="300px">
-            <img src="./images/5.jpg" alt="图片5" width="400px" height="300px">
+    
+    <div class="container">
+        <div class="window">
+            <div id="slides" class="images">
+                <img src="./images/1.jpg" alt="图片1" width="400px" height="300px">
+                <img src="./images/2.jpg" alt="图片2" width="400px" height="300px">
+                <img src="./images/3.jpg" alt="图片3" width="400px" height="300px">
+                <img src="./images/4.jpg" alt="图片4" width="400px" height="300px">
+                <img src="./images/5.jpg" alt="图片5" width="400px" height="300px">
+            </div>
+            <div id="controls">
+                <button id="previous">上一张</button>
+                <button id="next">下一张</button>
+            </div>
+            <div id="buttonWrapper" style="text-align: center;">
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+            </div>
         </div>
     </div>
+    
     <script src="jquery-3.4.1.min.js"></script>
     <script src="main.js"></script>
 </body>
