@@ -42,12 +42,26 @@
 cssArray = initialize($('.images>img'))
 var length = $('.images>img').length
 var n = 1
-setInterval(function(){
+let timer = setInterval(function(){
     for(let i=0;i<length;i++){
         $('.images>img').eq((n+i)%(length)).removeClass("leave current enter").addClass(cssArray[i])
     }
     n += 1
 },1000)
+
+// 为防止切换网页的时候出现BUG，我们加以下代码，来规定切换的时候停住
+document.addEventListener('visibilitychange', function(e){
+    if(document.hidden){
+        window.clearInterval(timer)
+    }else{
+        timer = setInterval(function(){
+            for(let i=0;i<length;i++){
+                $('.images>img').eq((n+i)%(length)).removeClass("leave current enter").addClass(cssArray[i])
+            }
+            n += 1
+        },1000)
+    }
+})
 
 // 设置初始化状态以及生成样式列表，这个样式列表会在image之间进行传递型循环
 function initialize(nodes){
